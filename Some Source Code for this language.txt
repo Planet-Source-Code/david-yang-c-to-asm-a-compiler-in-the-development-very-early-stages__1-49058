@@ -1,0 +1,80 @@
+NOTE: the function msgbox does not work yet, but the program does produce working assembly (theoriatically, not tested on any assembler yet - issues with syntax etc), which is the main point of thie program
+
+
+Different program here 
+This shows modules, and arrays
+======================
+
+
+int main()
+{
+    int array[5][5];
+    array [3][2]=4;
+    msgbox(array [3][2]);
+    msgbox(function (23));
+};
+
+int function(int a)
+{
+    a=a+1;
+    return a;
+};
+
+
+Different program here 
+THis shows modules with more than 1 argument
+======================
+
+int main()
+{
+    msgbox(function(23,24));
+};
+
+int function (int a, int b)
+{
+    a=a+b;
+    return a;
+};
+
+
+
+Different program here 
+Shows looping
+======================
+
+
+int main()
+{
+     int a;
+     int counter;
+     for(a=1;a<1001;a=a+1)
+     {
+          counter=counter+a;    
+     };
+     msgbox(counter);
+};
+
+
+
+Different program here 
+Shows call stacking
+======================
+
+
+int main()
+{
+    msgbox(function1(14));
+};
+
+int function1(int a)
+{
+    a=a+1+function2(a);
+    return a;
+};
+
+int function2(int gag)
+{
+    gag=gag*2+1;
+    msgbox(gag);
+    return gag;
+}
